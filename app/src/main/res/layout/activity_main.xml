@@ -30,14 +30,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/widget_button"
-                    android:layout_width="150px"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30px"
+                    android:layout_marginTop="60px"
+                    android:layout_marginLeft="20dp"
                     android:background="#FFFFFF"
                     app:srcCompat="@drawable/button" />
 
@@ -48,19 +49,19 @@
 
                 <ImageButton
                     android:id="@+id/pay_button"
-                    android:layout_width="80dp"
+                    android:layout_width="81dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30px"
+                    android:layout_marginTop="60px"
                     android:layout_marginRight="5dp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="1dp"
                     android:background="#F8F8F8"
                     app:srcCompat="@drawable/npay_logout" />
 
                 <ImageButton
                     android:id="@+id/box_button"
-                    android:layout_width="50dp"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30px"
+                    android:layout_marginTop="60px"
                     android:layout_marginRight="5dp"
                     android:background="#FFFFFF"
                     app:srcCompat="@drawable/box_logout" />
@@ -69,7 +70,7 @@
             <View
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="150dp" />
 
             <ImageView
                 android:id="@+id/imageView3"
