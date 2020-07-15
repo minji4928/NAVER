@@ -7,7 +7,6 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
@@ -30,11 +29,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:orientation="horizontal">
-
                 <ImageButton
                     android:id="@+id/widget_button"
                     android:layout_width="wrap_content"
@@ -42,13 +40,8 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="60px"
                     android:background="#FFFFFF"
-                    app:srcCompat="@drawable/button" />
-
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content" />
-
+                    app:srcCompat="@drawable/button"
+                    android:layout_alignParentLeft="true" />
                 <ImageButton
                     android:id="@+id/pay_button"
                     android:layout_width="81dp"
@@ -57,8 +50,8 @@
                     android:layout_marginTop="60px"
                     android:layout_marginRight="5dp"
                     android:background="#F8F8F8"
-                    app:srcCompat="@drawable/npay_logout" />
-
+                    app:srcCompat="@drawable/npay_logout"
+                    android:layout_toLeftOf="@+id/box_button" />
                 <ImageButton
                     android:id="@+id/box_button"
                     android:layout_width="40dp"
@@ -66,8 +59,9 @@
                     android:layout_marginTop="60px"
                     android:layout_marginRight="5dp"
                     android:background="#FFFFFF"
-                    app:srcCompat="@drawable/box_logout" />
-            </LinearLayout>
+                    app:srcCompat="@drawable/box_logout"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
 
             <View
                 android:id="@+id/view5"
@@ -126,7 +120,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:orientation="horizontal">
-
                 <ImageButton
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
@@ -138,7 +131,6 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_gravity="center"/>
-
                 <ImageButton
                     android:id="@+id/view6"
                     android:layout_width="150dp"
@@ -148,7 +140,6 @@
                     android:background="#00FFFFFF"
                     android:padding="10dp"
                     android:layout_gravity="center"/>
-
             </LinearLayout>
 
             <View
@@ -162,12 +153,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:orientation="vertical">
-
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
                     <TextView
                         android:id="@+id/wether"
                         android:layout_width="wrap_content"
@@ -177,8 +166,8 @@
                         android:fontFamily="sans-serif-black"
                         android:text="날씨"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
-
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
                     <Button
                         android:id="@+id/wetherbutton"
                         android:layout_width="wrap_content"
@@ -187,40 +176,33 @@
                         android:layout_marginTop="15dp"
                         android:background="#00FFFFFF"
                         android:text="전주시 효자4동"
-                        android:textSize="13dp" />
-
-                    <View
-                        android:id="@+id/view7"
-                        android:layout_width="120dp"
-                        android:layout_height="1dp" />
-
+                        android:textSize="13dp"
+                        android:layout_toRightOf="@+id/wether"/>
                     <Button
                         android:id="@+id/button5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="#00FFFFFF"
+                        android:layout_toLeftOf="@+id/imageButton"
                         android:text="알림설정" />
-
                     <ImageButton
                         android:id="@+id/imageButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
                         android:background="#00FFFFFF"
+                        android:layout_alignParentRight="true"
                         app:srcCompat="@drawable/close" />
-                </LinearLayout>
-
+                </RelativeLayout>
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
                         android:orientation="horizontal">
-
                         <Button
                             android:id="@+id/button11"
                             android:layout_width="wrap_content"
@@ -230,7 +212,6 @@
                             android:padding="15dp"
                             android:text="시간대별 날씨"
                             android:textStyle="bold" />
-
                         <Button
                             android:id="@+id/button12"
                             android:layout_width="wrap_content"
@@ -239,7 +220,6 @@
                             android:padding="15dp"
                             android:text="시간대별 미세먼지"
                             android:textStyle="bold" />
-
                         <Button
                             android:id="@+id/button13"
                             android:layout_width="wrap_content"
@@ -248,7 +228,6 @@
                             android:padding="15dp"
                             android:text="주간 날씨"
                             android:textStyle="bold" />
-
                         <Button
                             android:id="@+id/button14"
                             android:layout_width="wrap_content"
@@ -257,7 +236,6 @@
                             android:padding="15dp"
                             android:text="주간 미세먼지"
                             android:textStyle="bold" />
-
                     </LinearLayout>
                 </HorizontalScrollView>
 
@@ -298,10 +276,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="535dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -315,14 +293,8 @@
                         android:fontFamily="sans-serif-black"
                         android:text="증권"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
-
-
-                    <View
-                        android:id="@+id/view15"
-                        android:layout_width="310dp"
-                        android:layout_height="1dp" />
-
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
 
                     <ImageButton
                         android:id="@+id/closebutton"
@@ -330,31 +302,117 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
                         android:background="#00FFFFFF"
-                        app:srcCompat="@drawable/close" />
-                </LinearLayout>
+                        app:srcCompat="@drawable/close"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-                    <ImageButton
+                    <LinearLayout
                         android:layout_width="180dp"
                         android:layout_height="130dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight = "3dp"
-                        />
-
-
-                    <Button
+                        android:orientation = "vertical"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/shadow">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text = "코스닥"
+                            android:textSize ="18dp"
+                            android:background = "#DA6C6B"
+                            android:textColor="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:paddingLeft = "10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text = "776.73"
+                            android:textSize = "27dp"
+                            android:gravity="left"
+                            android:paddingLeft="13dp"
+                            android:layout_marginTop="15dp"
+                            android:textColor = "#000000"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text = " ▲ 3.92 +0.51%"
+                            android:textColor = "#DA6C6B"
+                            android:textSize = "17dp"
+                            android:layout_marginTop="10dp"
+                            android:paddingLeft = "10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
                         android:layout_width="180dp"
                         android:layout_height="130dp"
-                        android:layout_marginTop = "15dp"
-                        />
+                        android:orientation = "vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/shadow">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text = "환율"
+                                android:textSize ="18dp"
+                                android:background = "#6874A8"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center_vertical"
+                                android:paddingLeft = "10dp"
+                                android:layout_alignParentLeft="true"/>
 
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                app:srcCompat = "@drawable/usa"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="7dp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:layout_marginTop = "15dp">
+                            <TextView
+                                android:id="@+id/moneyexchange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text = "1,200.90"
+                                android:textSize = "27dp"
+                                android:gravity="left"
+                                android:paddingLeft="13dp"
+                                android:textColor = "#000000"
+                                android:layout_alignParentLeft="true"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text = "원/$"
+                                android:textSize = "17dp"
+                                android:gravity="left"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_toRightOf="@+id/moneyexchange"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:text = " ▼ 0.10 -0.01%"
+                            android:textSize="17dp"
+                            android:textColor = "#6874A8"
+                            android:layout_marginTop="10dp"
+                            android:paddingLeft = "10dp"
+                            />
+                    </LinearLayout>
                 </LinearLayout>
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp">
@@ -368,12 +426,8 @@
                         android:background="#00FFFFFF"
                         android:text="인기검색 >"
                         android:textColor="#686868"
-                        android:textSize="18dp" />
-
-                    <View
-                        android:id="@+id/view16"
-                        android:layout_width="250dp"
-                        android:layout_height="1dp" />
+                        android:textSize="18dp"
+                        android:layout_alignParentLeft="true"/>
 
                     <ImageButton
                         android:id="@+id/button20"
@@ -381,12 +435,240 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="#00FFFFFF"
-                        app:srcCompat ="@drawable/f5"/>
+                        app:srcCompat ="@drawable/f5"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="18dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:text = "신풍제약"
+                        android:textSize = "18dp"
+                        android:textColor = "#000000"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text = "57,600"
+                        android:textSize = "18dp"
+                        android:layout_toLeftOf="@+id/up1"
+                        android:layout_marginRight="7dp"
+                        android:textColor = "#000000"
+                        android:gravity = "right"/>
+                    <TextView
+                        android:id="@+id/up1"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text = "▲ 8,950"
+                        android:textSize = "16dp"
+                        android:textColor = "#DA6C6B"
+                        android:layout_toLeftOf="@+id/company1"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/company1"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:text = "+18.40%"
+                        android:textColor = "#FFFFFF"
+                        android:textSize = "16dp"
+                        android:background = "#DA6C6B"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity = "center"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CDD3D3D3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="18dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:text = "카카오"
+                        android:textSize = "18dp"
+                        android:textColor = "#000000"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text = "347,000"
+                        android:textSize = "18dp"
+                        android:layout_toLeftOf="@+id/up2"
+                        android:layout_marginRight="7dp"
+                        android:textColor = "#000000"
+                        android:gravity = "right"/>
+                    <TextView
+                        android:id="@+id/up2"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text = "▼ 8,500"
+                        android:textSize = "16dp"
+                        android:textColor = "#6874A8"
+                        android:layout_toLeftOf="@+id/company2"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/company2"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:text = "-2.39%"
+                        android:textColor = "#FFFFFF"
+                        android:textSize = "16dp"
+                        android:background = "#6874A8"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity = "center"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#CDD3D3D3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="18dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:text = "씨젠"
+                        android:textSize = "18dp"
+                        android:textColor = "#000000"
+                        android:layout_marginLeft="20dp"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:text = "178,700"
+                        android:textSize = "18dp"
+                        android:layout_toLeftOf="@+id/up3"
+                        android:layout_marginRight="7dp"
+                        android:textColor = "#000000"
+                        android:gravity = "right"/>
+                    <TextView
+                        android:id="@+id/up3"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text = "▲ 6,200"
+                        android:textSize = "16dp"
+                        android:textColor = "#DA6C6B"
+                        android:layout_toLeftOf="@+id/company3"
+                        android:layout_marginRight="1dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/company3"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:text = "+3.59%"
+                        android:textColor = "#FFFFFF"
+                        android:textSize = "16dp"
+                        android:background = "#DA6C6B"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity = "center"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin = "10dp"
+                    android:background="#F9FAFC">
 
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_toLeftOf="@+id/moneyview1"
+                        android:gravity = "center">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat = "@drawable/moneysearch"/>
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:text = "종목 검색"
+                            android:textSize = "15dp"
+                            android:textColor = "#94969C"
+                            android:gravity = "center"/>
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/moneyview1"
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="#CDD3D3D3"
+                        android:layout_toLeftOf = "@id/korea"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity = "center_vertical"/>
+                    <LinearLayout
+                        android:id="@+id/korea"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_centerInParent="true"
+                        android:gravity = "center">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat = "@drawable/moneykorea"/>
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:text = "국내 증시"
+                            android:textSize = "15dp"
+                            android:textColor = "#94969C"
+                            android:gravity = "center"/>
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/moneyview2"
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="#CDD3D3D3"
+                        android:layout_toRightOf = "@id/korea"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity = "center_vertical"/>
+                    <LinearLayout
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_toRightOf = "@+id/moneyview2"
+                        android:gravity = "center">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:srcCompat = "@drawable/moneyhome"/>
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:text = "증권 홈"
+                            android:textSize = "15dp"
+                            android:textColor = "#94969C"
+                            android:gravity = "center"/>
+                    </LinearLayout>
 
 
 
+
+                </RelativeLayout>
 
             </LinearLayout>
             <View
@@ -401,7 +683,7 @@
                 android:layout_height="700dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -415,12 +697,8 @@
                         android:fontFamily="sans-serif-black"
                         android:text="웹툰"
                         android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/view20"
-                        android:layout_width="310dp"
-                        android:layout_height="1dp" />
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"/>
 
 
                     <ImageButton
@@ -429,8 +707,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="13dp"
                         android:background="#00FFFFFF"
-                        app:srcCompat="@drawable/close" />
-                </LinearLayout>
+                        app:srcCompat="@drawable/close"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
