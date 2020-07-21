@@ -1,14 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MypageList">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".MypageList">
 
-</FrameLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/mail1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/mailbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/mail" />
+
+                    <Button
+                        android:id="@+id/mailbutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="메일"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/keep1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/keepbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/keep" />
+
+                    <Button
+                        android:id="@+id/keepbutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="KEEP"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cafe1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/cafebutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/cafe" />
+
+                    <Button
+                        android:id="@+id/cafebutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="카페"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/blog1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/blogbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/blog" />
+
+                    <Button
+                        android:id="@+id/blogbutton2"
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="블로그"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:id="@+id/shopping1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/shoppingbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/navershopping" />
+
+                    <Button
+                        android:id="@+id/shoppingbutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="네이버쇼핑"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pay1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/paybutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/naver_pay" />
+
+                    <Button
+                        android:id="@+id/paybutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="네이버페이"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/webtoon1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/webtoonbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/webtoon" />
+
+                    <Button
+                        android:id="@+id/webtoonbutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="웹툰"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/kin1"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/inbutton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/in" />
+
+                    <Button
+                        android:id="@+id/inbutton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="#00FFFFFF"
+                        android:text="지식iN"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
+</layout>

@@ -1,21 +1,16 @@
 package com.example.test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.example.test.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,303 +18,145 @@ public class MainActivity extends AppCompatActivity {
     Animation tranlateTopAnim;
     int weatherstate = 0, moneystate = 0, webtoonstate = 0, gostate = 0;
     int weatherresultstate = 0;
-
-    ImageButton widget_button, pay_button, box_button, weatherclose, moneyclose, webtoonclose, goclose;
-    HorizontalScrollView weatherlist, webtoonlist;
-    ImageButton ad1, ad2, ad3, weatherbutton1, now, weatherresult, restart;
-    Button weatherbutton, button5, timeweather, timedust, weekweather, weekdust, weatherlast, chart;
-    Button moneychart, add, change, setting, logout, allservice, pc, use, person, center;
-    LinearLayout money1, money2, money3, moneysearch, korea, moneyview3;
-    LinearLayout webtoonlist1, webtoonlist2, recommand1, recommand2, recommand3, webtoonhome, daywebtoon, best, webtoonlast, gorecommand1, gorecommand2, gorecommand3, episode1, episode2, episode3;
-    LinearLayout mail, keep, cafe, blog, shopping, pay, gowebtoon, in, golist1, golist2;
-    RelativeLayout moneybutton, moneylist1, moneylist2, moneylist3, moneylist4;
-    View moneylistview1, moneylistview2, webtoonview;
-    TextView recommand;
     String gourl;
-    ImageView naver;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        tranlateBottomAnim = AnimationUtils.loadAnimation(this, R.anim.mypage);
-        tranlateTopAnim = AnimationUtils.loadAnimation(this, R.anim.mypage2);
-
-        weatherclose = findViewById(R.id.weatherclose);
-        weatherresult = findViewById(R.id.weatherresult);
-        weatherlist = findViewById(R.id.weatherlist);
-        weatherlast = findViewById(R.id.weatherlast);
-
-        moneyclose = findViewById(R.id.moneyclose);
-        money3 = findViewById(R.id.money3);
-        moneybutton = findViewById(R.id.moenybutton);
-        moneylist1 = findViewById(R.id.moneylist1);
-        moneylist2 = findViewById(R.id.moneylist2);
-        moneylist3 = findViewById(R.id.moneylist3);
-        moneylist4 = findViewById(R.id.moneylist4);
-        moneylistview1 = findViewById(R.id.moneylistview1);
-        moneylistview2 = findViewById(R.id.moneylistview2);
-
-        webtoonclose = findViewById(R.id.webtoonclose);
-        webtoonlist = findViewById(R.id.webtoonlist);
-        webtoonview = findViewById(R.id.webtoonview);
-        recommand = findViewById(R.id.recommand);
-        recommand1 = findViewById(R.id.recommand1);
-        recommand2 = findViewById(R.id.recommand2);
-        recommand3 = findViewById(R.id.recommand3);
-        webtoonlast = findViewById(R.id.webtoonlast);
-
-        goclose = findViewById(R.id.goclose);
-        golist1 = findViewById(R.id.golist1);
-        golist2 = findViewById(R.id.golist2);
-
-        weatherclose.setOnClickListener(close);
-        moneyclose.setOnClickListener(close);
-        webtoonclose.setOnClickListener(close);
-        goclose.setOnClickListener(close);
-
-        timeweather = findViewById(R.id.timeweather);
-        timedust = findViewById(R.id.timedust);
-        weekweather = findViewById(R.id.weekweather);
-        weekdust = findViewById(R.id.weekdust);
-
-        timeweather.setOnClickListener(weather);
-        timedust.setOnClickListener(weather);
-        weekweather.setOnClickListener(weather);
-        weekdust.setOnClickListener(weather);
-
-        weatherbutton1 = findViewById(R.id.weatherbutton1);
-        now = findViewById(R.id.now);
-        weatherresult = findViewById(R.id.weatherresult);
-        weatherlast = findViewById(R.id.weatherlast);
-        money1 = findViewById(R.id.money1);
-        money2 = findViewById(R.id.money2);
-        chart = findViewById(R.id.chart);
-        moneylist1 = findViewById(R.id.moneylist1);
-        moneylist2 = findViewById(R.id.moneylist2);
-        moneylist3 = findViewById(R.id.moneylist3);
-        moneysearch = findViewById(R.id.moneysearch);
-        korea = findViewById(R.id.korea);
-        moneyview3 = findViewById(R.id.moneyview3);
-        webtoonlist1 = findViewById(R.id.webtoonlist1);
-        webtoonlist2 = findViewById(R.id.webtoonlist2);
-        gorecommand1 = findViewById(R.id.gorecommand1);
-        episode1 = findViewById(R.id.episode1);
-        gorecommand2 = findViewById(R.id.gorecommand2);
-        episode2 = findViewById(R.id.episode2);
-        gorecommand3 = findViewById(R.id.gorecommand3);
-        episode3 = findViewById(R.id.episode3);
-        webtoonhome = findViewById(R.id.webtoonhome);
-        daywebtoon = findViewById(R.id.daywebtoon);
-        best = findViewById(R.id.best);
-        mail = findViewById(R.id.mail);
-        keep = findViewById(R.id.keep);
-        cafe = findViewById(R.id.cafe);
-        blog = findViewById(R.id.blog);
-        shopping = findViewById(R.id.shopping);
-        pay = findViewById(R.id.pay);
-        gowebtoon = findViewById(R.id.gowebtoon);
-        in = findViewById(R.id.in);
-        pc = findViewById(R.id.pc);
-        use = findViewById(R.id.use);
-        person = findViewById(R.id.person);
-        center = findViewById(R.id.center);
-        naver = findViewById(R.id.naver);
-        pay_button = findViewById(R.id.pay_button);
-
-        weatherbutton1.setOnClickListener(url);
-        now.setOnClickListener(url);
-        weatherresult.setOnClickListener(url);
-        weatherlast.setOnClickListener(url);
-        money1.setOnClickListener(url);
-        money2.setOnClickListener(url);
-        chart.setOnClickListener(url);
-        moneylist1.setOnClickListener(url);
-        moneylist2.setOnClickListener(url);
-        moneylist3.setOnClickListener(url);
-        moneysearch.setOnClickListener(url);
-        korea.setOnClickListener(url);
-        moneyview3.setOnClickListener(url);
-        webtoonlist1.setOnClickListener(url);
-        webtoonlist2.setOnClickListener(url);
-        gorecommand1.setOnClickListener(url);
-        episode1.setOnClickListener(url);
-        gorecommand2.setOnClickListener(url);
-        episode2.setOnClickListener(url);
-        gorecommand3.setOnClickListener(url);
-        episode3.setOnClickListener(url);
-        webtoonhome.setOnClickListener(url);
-        daywebtoon.setOnClickListener(url);
-        best.setOnClickListener(url);
-        mail.setOnClickListener(url);
-        keep.setOnClickListener(url);
-        cafe.setOnClickListener(url);
-        blog.setOnClickListener(url);
-        shopping.setOnClickListener(url);
-        pay.setOnClickListener(url);
-        gowebtoon.setOnClickListener(url);
-        in.setOnClickListener(url);
-        pc.setOnClickListener(url);
-        use.setOnClickListener(url);
-        person.setOnClickListener(url);
-        center.setOnClickListener(url);
-        naver.setOnClickListener(url);
-        pay_button.setOnClickListener(url);
-
-        widget_button = findViewById(R.id.widget_button);
-        widget_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), mypage.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.mypage, R.anim.hold);
-            }
-        });
-
-    }
-
     View.OnClickListener close = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.weatherclose:
                     if (weatherstate == 0) {
-                        weatherlist.setVisibility(View.GONE);
-                        weatherresult.setVisibility(View.GONE);
-                        weatherlast.setVisibility(View.GONE);
+                        mBinding.weatherlist.setVisibility(View.GONE);
+                        mBinding.weatherresult.setVisibility(View.GONE);
+                        mBinding.weatherlast.setVisibility(View.GONE);
                         weatherstate = 1;
-                        weatherclose.setImageResource(R.drawable.close2);
+                        mBinding.weatherclose.setImageResource(R.drawable.close2);
                     } else {
-                        weatherlist.setVisibility(View.VISIBLE);
-                        weatherresult.setVisibility(View.VISIBLE);
-                        weatherlast.setVisibility(View.VISIBLE);
-                        weatherclose.setImageResource(R.drawable.close);
+                        mBinding.weatherlist.setVisibility(View.VISIBLE);
+                        mBinding.weatherresult.setVisibility(View.VISIBLE);
+                        mBinding.weatherlast.setVisibility(View.VISIBLE);
+                        mBinding.weatherclose.setImageResource(R.drawable.close);
                         weatherstate = 0;
                     }
                     break;
                 case R.id.moneyclose:
                     if (moneystate == 0) {
-                        money3.setVisibility(View.GONE);
-                        moneybutton.setVisibility(View.GONE);
-                        moneylist1.setVisibility(View.GONE);
-                        moneylist2.setVisibility(View.GONE);
-                        moneylist3.setVisibility(View.GONE);
-                        moneylist4.setVisibility(View.GONE);
-                        moneylistview1.setVisibility(View.GONE);
-                        moneylistview2.setVisibility(View.GONE);
-                        moneyclose.setImageResource(R.drawable.close2);
+                        mBinding.money3.setVisibility(View.GONE);
+                        mBinding.moenybutton.setVisibility(View.GONE);
+                        mBinding.moneylist1.setVisibility(View.GONE);
+                        mBinding.moneylist2.setVisibility(View.GONE);
+                        mBinding.moneylist3.setVisibility(View.GONE);
+                        mBinding.moneylist4.setVisibility(View.GONE);
+                        mBinding.moneylistview1.setVisibility(View.GONE);
+                        mBinding.moneylistview2.setVisibility(View.GONE);
+                        mBinding.moneyclose.setImageResource(R.drawable.close2);
                         moneystate = 1;
                     } else {
-                        money3.setVisibility(View.VISIBLE);
-                        moneybutton.setVisibility(View.VISIBLE);
-                        moneylist1.setVisibility(View.VISIBLE);
-                        moneylist2.setVisibility(View.VISIBLE);
-                        moneylist3.setVisibility(View.VISIBLE);
-                        moneylist4.setVisibility(View.VISIBLE);
-                        moneylistview1.setVisibility(View.VISIBLE);
-                        moneylistview2.setVisibility(View.VISIBLE);
-                        moneyclose.setImageResource(R.drawable.close);
+                        mBinding.money3.setVisibility(View.VISIBLE);
+                        mBinding.moenybutton.setVisibility(View.VISIBLE);
+                        mBinding.moneylist1.setVisibility(View.VISIBLE);
+                        mBinding.moneylist2.setVisibility(View.VISIBLE);
+                        mBinding.moneylist3.setVisibility(View.VISIBLE);
+                        mBinding.moneylist4.setVisibility(View.VISIBLE);
+                        mBinding.moneylistview1.setVisibility(View.VISIBLE);
+                        mBinding.moneylistview2.setVisibility(View.VISIBLE);
+                        mBinding.moneyclose.setImageResource(R.drawable.close);
                         moneystate = 0;
                     }
                     break;
                 case R.id.webtoonclose:
                     if (webtoonstate == 0) {
-                        webtoonlist.setVisibility(View.GONE);
-                        webtoonview.setVisibility(View.GONE);
-                        recommand.setVisibility(View.GONE);
-                        recommand1.setVisibility(View.GONE);
-                        recommand2.setVisibility(View.GONE);
-                        recommand3.setVisibility(View.GONE);
-                        webtoonlast.setVisibility(View.GONE);
-                        webtoonclose.setImageResource(R.drawable.close2);
+                        mBinding.webtoonlist.setVisibility(View.GONE);
+                        mBinding.webtoonview.setVisibility(View.GONE);
+                        mBinding.recommand.setVisibility(View.GONE);
+                        mBinding.recommand1.setVisibility(View.GONE);
+                        mBinding.recommand2.setVisibility(View.GONE);
+                        mBinding.recommand3.setVisibility(View.GONE);
+                        mBinding.webtoonlast.setVisibility(View.GONE);
+                        mBinding.webtoonclose.setImageResource(R.drawable.close2);
                         webtoonstate = 1;
                     } else {
-                        webtoonlist.setVisibility(View.VISIBLE);
-                        webtoonview.setVisibility(View.VISIBLE);
-                        recommand.setVisibility(View.VISIBLE);
-                        recommand1.setVisibility(View.VISIBLE);
-                        recommand2.setVisibility(View.VISIBLE);
-                        recommand3.setVisibility(View.VISIBLE);
-                        webtoonlast.setVisibility(View.VISIBLE);
-                        webtoonclose.setImageResource(R.drawable.close);
+                        mBinding.webtoonlist.setVisibility(View.VISIBLE);
+                        mBinding.webtoonview.setVisibility(View.VISIBLE);
+                        mBinding.recommand.setVisibility(View.VISIBLE);
+                        mBinding.recommand1.setVisibility(View.VISIBLE);
+                        mBinding.recommand2.setVisibility(View.VISIBLE);
+                        mBinding.recommand3.setVisibility(View.VISIBLE);
+                        mBinding.webtoonlast.setVisibility(View.VISIBLE);
+                        mBinding.webtoonclose.setImageResource(R.drawable.close);
                         webtoonstate = 0;
                     }
                     break;
                 case R.id.goclose:
                     if (gostate == 0) {
-                        golist1.setVisibility(View.GONE);
-                        golist2.setVisibility(View.GONE);
-                        goclose.setImageResource(R.drawable.close2);
+                        mBinding.golist1.setVisibility(View.GONE);
+                        mBinding.golist2.setVisibility(View.GONE);
+                        mBinding.goclose.setImageResource(R.drawable.close2);
                         gostate = 1;
                     } else {
-                        golist1.setVisibility(View.VISIBLE);
-                        golist2.setVisibility(View.VISIBLE);
-                        goclose.setImageResource(R.drawable.close);
+                        mBinding.golist1.setVisibility(View.VISIBLE);
+                        mBinding.golist2.setVisibility(View.VISIBLE);
+                        mBinding.goclose.setImageResource(R.drawable.close);
                         gostate = 0;
                     }
                     break;
             }
         }
     };
-
     View.OnClickListener weather = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.timeweather:
-                    weatherresult.setImageResource(R.drawable.wether);
-                    timeweather.setTextColor(Color.parseColor("#FFFFFF"));
-                    timeweather.setBackgroundColor(Color.parseColor("#7393CC"));
-                    timedust.setTextColor(Color.parseColor("#73767F"));
-                    timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekweather.setTextColor(Color.parseColor("#73767F"));
-                    weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekdust.setTextColor(Color.parseColor("#73767F"));
-                    weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weatherresult.setImageResource(R.drawable.wether);
+                    mBinding.timeweather.setTextColor(Color.parseColor("#FFFFFF"));
+                    mBinding.timeweather.setBackgroundColor(Color.parseColor("#7393CC"));
+                    mBinding.timedust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekdust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
                     weatherresultstate = 0;
                     break;
                 case R.id.timedust:
-                    weatherresult.setImageResource(R.drawable.daydust);
-                    timeweather.setTextColor(Color.parseColor("#73767F"));
-                    timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    timedust.setTextColor(Color.parseColor("#FFFFFF"));
-                    timedust.setBackgroundColor(Color.parseColor("#7393CC"));
-                    weekweather.setTextColor(Color.parseColor("#73767F"));
-                    weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekdust.setTextColor(Color.parseColor("#73767F"));
-                    weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weatherresult.setImageResource(R.drawable.daydust);
+                    mBinding.timeweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.timedust.setTextColor(Color.parseColor("#FFFFFF"));
+                    mBinding.timedust.setBackgroundColor(Color.parseColor("#7393CC"));
+                    mBinding.weekweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekdust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
                     weatherresultstate = 1;
                     break;
                 case R.id.weekweather:
-                    weatherresult.setImageResource(R.drawable.weekweather);
-                    timeweather.setTextColor(Color.parseColor("#73767F"));
-                    timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    timedust.setTextColor(Color.parseColor("#73767F"));
-                    timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekweather.setTextColor(Color.parseColor("#FFFFFF"));
-                    weekweather.setBackgroundColor(Color.parseColor("#7393CC"));
-                    weekdust.setTextColor(Color.parseColor("#73767F"));
-                    weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weatherresult.setImageResource(R.drawable.weekweather);
+                    mBinding.timeweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.timedust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekweather.setTextColor(Color.parseColor("#FFFFFF"));
+                    mBinding.weekweather.setBackgroundColor(Color.parseColor("#7393CC"));
+                    mBinding.weekdust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekdust.setBackgroundColor(Color.parseColor("#F3F6FD"));
                     weatherstate = 2;
                     break;
                 case R.id.weekdust:
-                    weatherresult.setImageResource(R.drawable.weekdust);
-                    timeweather.setTextColor(Color.parseColor("#73767F"));
-                    timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    timedust.setTextColor(Color.parseColor("#73767F"));
-                    timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekweather.setTextColor(Color.parseColor("#73767F"));
-                    weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
-                    weekdust.setTextColor(Color.parseColor("#FFFFFF"));
-                    weekdust.setBackgroundColor(Color.parseColor("#7393CC"));
+                    mBinding.weatherresult.setImageResource(R.drawable.weekdust);
+                    mBinding.timeweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timeweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.timedust.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.timedust.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekweather.setTextColor(Color.parseColor("#73767F"));
+                    mBinding.weekweather.setBackgroundColor(Color.parseColor("#F3F6FD"));
+                    mBinding.weekdust.setTextColor(Color.parseColor("#FFFFFF"));
+                    mBinding.weekdust.setBackgroundColor(Color.parseColor("#7393CC"));
                     weatherresultstate = 3;
                     break;
             }
         }
     };
-
     View.OnClickListener url = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -449,5 +286,72 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+    private ActivityMainBinding mBinding;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+
+        tranlateBottomAnim = AnimationUtils.loadAnimation(this, R.anim.mypage);
+        tranlateTopAnim = AnimationUtils.loadAnimation(this, R.anim.mypage2);
+
+
+        mBinding.weatherclose.setOnClickListener(close);
+        mBinding.moneyclose.setOnClickListener(close);
+        mBinding.webtoonclose.setOnClickListener(close);
+        mBinding.goclose.setOnClickListener(close);
+        mBinding.timeweather.setOnClickListener(weather);
+        mBinding.timedust.setOnClickListener(weather);
+        mBinding.weekweather.setOnClickListener(weather);
+        mBinding.weekdust.setOnClickListener(weather);
+        mBinding.weatherbutton1.setOnClickListener(url);
+        mBinding.now.setOnClickListener(url);
+        mBinding.weatherresult.setOnClickListener(url);
+        mBinding.weatherlast.setOnClickListener(url);
+        mBinding.money1.setOnClickListener(url);
+        mBinding.money2.setOnClickListener(url);
+        mBinding.chart.setOnClickListener(url);
+        mBinding.moneylist1.setOnClickListener(url);
+        mBinding.moneylist2.setOnClickListener(url);
+        mBinding.moneylist3.setOnClickListener(url);
+        mBinding.moneysearch.setOnClickListener(url);
+        mBinding.korea.setOnClickListener(url);
+        mBinding.moneyview3.setOnClickListener(url);
+        mBinding.webtoonlist1.setOnClickListener(url);
+        mBinding.webtoonlist2.setOnClickListener(url);
+        mBinding.gorecommand1.setOnClickListener(url);
+        mBinding.episode1.setOnClickListener(url);
+        mBinding.gorecommand2.setOnClickListener(url);
+        mBinding.episode2.setOnClickListener(url);
+        mBinding.gorecommand3.setOnClickListener(url);
+        mBinding.episode3.setOnClickListener(url);
+        mBinding.webtoonhome.setOnClickListener(url);
+        mBinding.daywebtoon.setOnClickListener(url);
+        mBinding.best.setOnClickListener(url);
+        mBinding.mail.setOnClickListener(url);
+        mBinding.keep.setOnClickListener(url);
+        mBinding.cafe.setOnClickListener(url);
+        mBinding.blog.setOnClickListener(url);
+        mBinding.shopping.setOnClickListener(url);
+        mBinding.pay.setOnClickListener(url);
+        mBinding.gowebtoon.setOnClickListener(url);
+        mBinding.in.setOnClickListener(url);
+        mBinding.pc.setOnClickListener(url);
+        mBinding.use.setOnClickListener(url);
+        mBinding.person.setOnClickListener(url);
+        mBinding.center.setOnClickListener(url);
+        mBinding.naver.setOnClickListener(url);
+        mBinding.payButton.setOnClickListener(url);
+        mBinding.widgetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), mypage.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.mypage, R.anim.hold);
+            }
+        });
+
+    }
 }

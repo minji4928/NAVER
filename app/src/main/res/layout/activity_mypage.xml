@@ -1,803 +1,1094 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#00FFFFFF"
-    tools:context=".mypage">
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00FFFFFF"
+        tools:context=".mypage">
 
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="#202F5A"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/exitbutton"
-                    android:layout_width="40dp"
-                    android:layout_height="38dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp"
-                    android:background="#FFFFFF"
-                    android:scaleType="fitXY"
-                    android:tint="#00FFFFFF"
-                    app:srcCompat="@drawable/button1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="#202F5A"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/exitbutton"
+                        android:layout_width="35dp"
+                        android:layout_height="33dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#FFFFFF"
+                        android:scaleType="fitXY"
+                        android:tint="#00FFFFFF"
+                        app:srcCompat="@drawable/button1" />
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/viewbutton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/page" />
+
+                    <ImageView
+                        android:id="@+id/settingbutton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/setting" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/mybutton"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:background="#00FFFFFF"
+                        android:tint="#00FFFFFF"
+                        app:srcCompat="@drawable/name" />
+
+                    <ImageButton
+                        android:id="@+id/qrbutton"
+                        android:layout_width="110dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#00FFFFFF"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/qr" />
+
+                </RelativeLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_test_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    app:ci_drawable="@drawable/green_radius"
+                    app:ci_height="4dp"
+                    app:ci_width="4dp"
+                    app:ci_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    app:ci_drawable_unselected="@drawable/gray_radius"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="#F6F7FB">
+
+                    <Button
+                        android:id="@+id/allservice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="#00FFFFFF"
+                        android:text="전체서비스 >" />
+
+                    <Switch
+                        android:id="@+id/ai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:text="Ai추천" />
+
+                    <View
+                        android:id="@+id/aiview"
+                        android:layout_width="1dp"
+                        android:layout_height="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/ai"
+                        android:background="#ECEDF1" />
+
+                    <Button
+                        android:id="@+id/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/aiview"
+                        android:background="#00FFFFFF"
+                        android:text="편집" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <LinearLayout
+                        android:id="@+id/naverplus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/naverplus" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="네이버플러스 멤버십"
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="쇼핑 최대 5% 적립 받기!" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="7dp"
+                        android:layout_toRightOf="@+id/naverplus"
+                        android:background="#F4F5F7" />
+
+                    <LinearLayout
+                        android:id="@+id/context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                app:srcCompat="@drawable/context" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="3dp"
+                                android:text="네이버 전자문서"
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="신청만 해도 혜택 드림" />
+                    </LinearLayout>
+
+                </RelativeLayout>
 
                 <View
-                    android:id="@+id/view3"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/viewbutton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
                     android:layout_marginTop="20dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/page" />
+                    android:background="#F4F5F7" />
 
-                <ImageView
-                    android:id="@+id/settingbutton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/setting" />
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
+                    <ImageView
+                        android:id="@+id/naverpay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="30dp"
+                        app:srcCompat="@drawable/naverpay" />
 
-                <ImageButton
-                    android:id="@+id/mybutton"
-                    android:layout_width="100dp"
+                    <Button
+                        android:id="@+id/naverpayhome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:background="#00FFFFFF"
+                        android:text="네이버페이 홈 >"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="40dp"
-                    android:background="#00FFFFFF"
-                    android:tint="#00FFFFFF"
-                    app:srcCompat="@drawable/name"
-                    android:layout_alignParentLeft="true"/>
-
-                <ImageButton
-                    android:id="@+id/qrbutton"
-                    android:layout_width="110dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="30dp"
-                    android:background="#00FFFFFF"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/qr"
-                    android:layout_marginRight="20dp"
-                    android:layout_alignParentRight="true"/>
-
-            </RelativeLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/mailbutton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/mail"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/mailbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="메일"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/keepbutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/keep"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/keepbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="Keep"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/cafebutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/cafe"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/cafebutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="카페"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/blogbutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/blog"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/blogbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="블로그"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp" />
-                    </LinearLayout>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/shoppingbutton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/navershopping"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/shoppingbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="네이버쇼핑"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/paybutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/naver_pay"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/paybutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="네이버페이"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/webtoonbutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/webtoon"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/webtoonbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="웹툰"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:id="@+id/inbutton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            app:srcCompat="@drawable/in"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"/>
-
-                        <Button
-                            android:id="@+id/inbutton2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#00FFFFFF"
-                            android:text="지식iN"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp" />
-                    </LinearLayout>
-                </TableRow>
-
-            </TableLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/circle1"
-                    android:layout_marginRight="10dp"/>
-                <Button
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:background="@drawable/circle2"/>
-            </LinearLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="#F6F7FB"
-                android:layout_marginBottom="25dp">
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text = "전체서비스 >"
-                    android:layout_alignParentLeft="true"
-                    android:background="#00FFFFFF"/>
-                <Switch
-                    android:id="@+id/ai"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ai추천"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"/>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="10dp"
-                    android:layout_toLeftOf="@+id/ai"
-                    android:layout_marginRight="10dp"
-                    android:id="@+id/aiview"
-                    android:background="#ECEDF1"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text = "편집"
-                    android:layout_toLeftOf="@+id/aiview"
-                    android:background="#00FFFFFF"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-                <LinearLayout
-                    android:id="@+id/naverplus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="30dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation = "horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat = "@drawable/naverplus"
-                            android:scaleType="fitXY"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text = "네이버플러스 멤버십"
-                            android:textStyle="bold"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="3dp"
-                            android:textColor = "#000000"/>
-                        <View
-                            android:layout_width="7dp"
-                            android:layout_height="7dp"
-                            android:layout_marginLeft="3dp"
-                            android:background="@drawable/circle3"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "쇼핑 최대 5% 적립 받기!"
-                        android:layout_marginTop="3dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#F4F5F7"
-                    android:layout_toRightOf="@+id/naverplus"
-                    android:layout_marginLeft="7dp"/>
-                <LinearLayout
-                    android:id="@+id/context"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation = "horizontal">
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat = "@drawable/context"
-                            android:scaleType="fitXY"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text = "네이버 전자문서"
-                            android:textStyle="bold"
-                            android:textSize="15dp"
-                            android:layout_marginLeft="3dp"
-                            android:textColor="#000000"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "신청만 해도 혜택 드림"
-                        android:layout_marginTop="3dp"/>
-                </LinearLayout>
-
-            </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#F4F5F7"
-                android:layout_marginTop="20dp"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat = "@drawable/naverpay"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="30dp"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:text = "네이버페이 홈 >"
-                    android:layout_alignParentRight="true"
-                    android:background="#00FFFFFF"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="30dp"
-                    android:textSize="15dp"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/paybox"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="30dp">
-                <LinearLayout
+                    android:background="@drawable/paybox">
+
+                    <LinearLayout
+                        android:id="@+id/naverpaymoney"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="20dp"
+                            android:text="네이버페이 포인트"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="20dp"
+                            android:text="1,883원"
+                            android:textColor="#000000"
+                            android:textSize="25dp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/greenbutton"
+                        android:text="충전하기"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentLeft="true">
-                    <TextView
-                        android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp">
+
+                    <LinearLayout
+                        android:id="@+id/qrcode"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "네이버페이 포인트"
-                        android:layout_marginTop="20dp"
-                        android:textColor = "#000000"
-                        android:layout_marginLeft="20dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/qrcode" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="7dp"
+                            android:text="QR/스마트주문"
+                            android:textColor="#000000"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bacode"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "1,883원"
-                        android:textSize = "25dp"
-                        android:textColor = "#000000"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="20dp"/>
-                </LinearLayout>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:text="충전하기"
-                    android:textColor = "#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="@drawable/greenbutton"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="20dp"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="20dp">
-                <LinearLayout
-                    android:id="@+id/qrcode"
-                    android:layout_width="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_toLeftOf="@+id/send"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/bacode" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="7dp"
+                            android:text="바코드결제"
+                            android:textColor="#000000"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/send" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="7dp"
+                            android:text="송금"
+                            android:textColor="#000000"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="#F6F7FB">
+
+                    <TextView
+                        android:id="@+id/list"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="결제내역"
+                        android:textColor="#8C8F97"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:id="@+id/payview1"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/list"
+                        android:background="#8C8F97" />
+
+                    <TextView
+                        android:id="@+id/present"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@id/payview1"
+                        android:gravity="center"
+                        android:text="선물함"
+                        android:textColor="#8C8F97"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:id="@+id/payview2"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/shoppingmy"
+                        android:background="#8C8F97" />
+
+                    <TextView
+                        android:id="@+id/shoppingmy"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toLeftOf="@id/payview3"
+                        android:gravity="center"
+                        android:text="쇼핑MY"
+                        android:textColor="#8C8F97"
+                        android:textSize="15dp" />
+
+                    <View
+                        android:id="@+id/payview3"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/reservemy"
+                        android:background="#8C8F97" />
+
+                    <TextView
+                        android:id="@+id/reservemy"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="예약MY"
+                        android:textColor="#8C8F97"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    app:srcCompat="@drawable/ad4" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="네이버 추천 앱"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/recommand4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp">
+
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        app:srcCompat = "@drawable/qrcode"/>
+                        android:id="@+id/calendarimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        app:srcCompat="@drawable/calendar" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/calendarimage"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="캘린더"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="일상을 계획하는 즐거움" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bluebutton"
+                        android:text="받기"
+                        android:textColor="#FFFFFF"
+                        android:textSize = "10dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="#F5F5F8" />
+
+                <RelativeLayout
+                    android:id="@+id/recommand5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp">
+
+                    <ImageView
+                        android:id="@+id/vibeimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        app:srcCompat="@drawable/vibe" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/vibeimage"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="VIBE"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="오늘 들을 음악 고민없이, VIBE" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bluebutton"
+                        android:text="받기"
+                        android:textSize="10dp"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="#F5F5F8" />
+
+                <RelativeLayout
+                    android:id="@+id/recommand6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp">
+
+                    <ImageView
+                        android:id="@+id/realestateimage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        app:srcCompat="@drawable/realestate" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/realestateimage"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="부동산"
+                            android:textColor="#000000"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="집 찾을 때도, 방 찾을 때도 네이버부.." />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/bluebutton"
+                        android:text="받기"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#F5F5F8"
+                    android:layout_marginBottom="50dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/allservice2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp">
+
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:text = "QR/스마트주문"
-                        android:textSize = "17dp"
-                        android:textColor = "#000000"
-                        android:layout_marginLeft="7dp"/>
-                </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:text="전체서비스"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="30dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat = "@drawable/arrow"/>
+                </RelativeLayout>
                 <LinearLayout
-                    android:id="@+id/bacode"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/service1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/service1"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "내도구"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text = "16"
+                        android:textSize = "18dp"
+                        android:textColor = "#5685DA"
+                        android:layout_gravity = "center_vertical"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
                     android:layout_marginRight="15dp"
-                    android:layout_toLeftOf="@+id/send">
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/service2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        app:srcCompat = "@drawable/bacode"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/service2"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:text = "바코드결제"
-                        android:textSize = "17dp"
+                        android:layout_height="wrap_content"
+                        android:text = "소셜"
                         android:textColor = "#000000"
-                        android:layout_marginLeft="7dp"/>
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text = "13"
+                        android:textSize = "18dp"
+                        android:textColor = "#5685DA"
+                        android:layout_gravity = "center_vertical"/>
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
                 <LinearLayout
-                    android:id="@+id/send"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/service3"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/service3"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "교육 . 문화"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text = "11"
+                        android:textSize = "18dp"
+                        android:textColor = "#5685DA"
+                        android:layout_gravity = "center_vertical"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/service4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/service4"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "엔터"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text = "16"
+                        android:textSize = "18dp"
+                        android:textColor = "#5685DA"
+                        android:layout_gravity = "center_vertical"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/service5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/service5"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "금융"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text = "4"
+                        android:textSize = "18dp"
+                        android:textColor = "#5685DA"
+                        android:layout_gravity = "center_vertical"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/growth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="네이버에서 성장하기"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="30dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        app:srcCompat = "@drawable/arrow"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:id="@+id/growth1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/talent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "인플루언서로 성장하기"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/growth2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/onlinestore"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "온라인 스토어 성공하기"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/growth3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/offlinestore"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "오프라인 스토어 홍보하기"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/growth4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/solution"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "효율적인 기업용 솔루션 찾기"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+                <LinearLayout
+                    android:id="@+id/growth5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat = "@drawable/ads"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="20dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "내 비즈니스 광고하기"
+                        android:textColor = "#000000"
+                        android:textSize = "18dp"
+                        android:layout_gravity = "center_vertical"
+                        android:layout_marginRight="10dp"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginRight="15dp"
+                    android:background = "#F6F7F9"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"/>
+                <RelativeLayout
+                    android:id="@+id/notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_alignParentRight="true">
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        app:srcCompat = "@drawable/send"/>
+                    android:background = "#F6F7FB"
+                    android:padding="15dp"
+                    android:layout_marginBottom="40dp">
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:text = "송금"
-                        android:textSize = "17dp"
-                        android:textColor = "#000000"
-                        android:layout_marginLeft="7dp"/>
-                </LinearLayout>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#F6F7FB"
-                android:layout_marginRight="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp">
-                <TextView
-                    android:id="@+id/list"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text = "결제내역"
-                    android:textColor = "#8C8F97"
-                    android:textSize = "15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_margin="10dp"
-                    android:layout_alignParentLeft="true"
-                    android:gravity="center"/>
-                <View
-                    android:id="@+id/payview1"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#8C8F97"
-                    android:layout_toRightOf = "@+id/list"/>
-                <TextView
-                    android:id="@+id/present"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text = "선물함"
-                    android:textColor = "#8C8F97"
-                    android:textSize = "15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_margin="10dp"
-                    android:layout_toRightOf="@id/payview1"
-                    android:gravity="center"/>
-                <View
-                    android:id="@+id/payview2"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#8C8F97"
-                    android:layout_toLeftOf="@+id/shoppingmy"/>
-                <TextView
-                    android:id="@+id/shoppingmy"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text = "쇼핑MY"
-                    android:textColor = "#8C8F97"
-                    android:textSize = "15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_margin="10dp"
-                    android:layout_toLeftOf="@id/payview3"
-                    android:gravity="center"/>
-                <View
-                    android:id="@+id/payview3"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#8C8F97"
-                    android:layout_toLeftOf="@+id/reservemy"/>
-                <TextView
-                    android:id="@+id/reservemy"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:text = "예약MY"
-                    android:textColor = "#8C8F97"
-                    android:textSize = "15dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_margin="10dp"
-                    android:layout_alignParentRight="true"
-                    android:gravity="center"/>
-            </RelativeLayout>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat = "@drawable/ad4"
-                android:layout_marginBottom="50dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text = "네이버 추천 앱"
-                android:textSize = "20dp"
-                android:textStyle="bold"
-                android:textColor = "#000000"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="15dp"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp">
+                        android:layout_height="wrap_content"
+                        android:text = "공지"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = ">"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+                    <Button
+                        android:id="@+id/logout2"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text = "로그아웃"
+                        android:background = "#00FFFFFF"
+                        android:textColor="#A4A9B3"
+                        android:layout_toLeftOf="@+id/lastview"/>
+                    <View
+                        android:id="@+id/lastview"
+                        android:layout_width="1dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="#F0F0F2"
+                        android:layout_centerInParent="true"/>
+                    <Button
+                        android:id="@+id/center"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:text = "고객센터"
+                        android:background="#00FFFFFF"
+                        android:textColor="#A4A9B3"
+                        android:layout_toRightOf="@+id/lastview"/>
+                </RelativeLayout>
                 <ImageView
-                    android:id="@+id/calendarimage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat = "@drawable/calendar"
-                    android:layout_alignParentLeft="true"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_toRightOf="@+id/calendarimage"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "캘린더"
-                        android:textColor = "#000000"
-                        android:textSize = "18dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text = "일상을 계획하는 즐거움"
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-                <Button
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"
-                    android:text="받기"
-                    android:textColor = "#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="@drawable/bluebutton"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="20dp"/>
-            </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#F5F5F8"
-                android:layout_margin="10dp"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp">
-                <ImageView
-                    android:id="@+id/vibeimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat = "@drawable/vibe"
-                    android:layout_alignParentLeft="true"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_toRightOf="@+id/vibeimage"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "VIBE"
-                        android:textColor = "#000000"
-                        android:textSize = "18dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text = "오늘 들을 음악 고민없이, VIBE"
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-                <Button
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"
-                    android:text="받기"
-                    android:textColor = "#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="@drawable/bluebutton"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="20dp"/>
-            </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#F5F5F8"
-                android:layout_margin="10dp"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp">
-                <ImageView
-                    android:id="@+id/realestateimage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat = "@drawable/realestate"
-                    android:layout_alignParentLeft="true"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_toRightOf="@+id/realestateimage"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "부동산"
-                        android:textColor = "#000000"
-                        android:textSize = "18dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text = "집 찾을 때도, 방 찾을 때도 네이버부.."
-                        android:layout_marginBottom="5dp"/>
-                </LinearLayout>
-                <Button
-                    android:layout_width="70dp"
-                    android:layout_height="40dp"
-                    android:text="받기"
-                    android:textColor = "#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="@drawable/bluebutton"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="20dp"/>
-            </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#F5F5F8"
-                android:layout_margin="10dp"/>
+                    app:srcCompat = "@drawable/naver3"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="30dp"/>
 
-
-
-
-
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
