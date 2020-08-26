@@ -353,5 +353,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBinding.searchbox.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(), search.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.mypage, R.anim.hold);
+            }
+        });
+
     }
 }

@@ -76,7 +76,7 @@
                 android:layout_marginBottom="27dp"
                 app:srcCompat="@drawable/naver" />
 
-            <EditText
+            <TextView
                 android:id="@+id/searchbox"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
@@ -86,9 +86,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/search"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:paddingLeft="20dp"
                 android:text="검색어 또는 URL 입력"
+                android:gravity = "center_vertical"
                 android:textColor="#86000000"
                 android:textSize="19dp" />
 
